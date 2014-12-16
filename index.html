@@ -31,6 +31,7 @@
   ]
 
  var visualization = d3plus.viz()
+    .id("name")
     .container("#viz")
     .type("network")
     .data(component_systems)  // sample dataset to attach to nodes
@@ -41,12 +42,9 @@
     })
     .ui([
       {
-        "method" : function(value){
-          alert(value);
-        },
         "method" : "edges",
         "type": "button",
-        "value"  : [{"Kill User": "new_user"}, {"New user": "kill_user"}]
+        "value": [{"Kill User": new_user}, {"New User": kill_user}]
       }
     ])
     .draw()
