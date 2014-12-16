@@ -30,15 +30,10 @@
     {"source": "Customer", "target": "EBS", "strength": "disco"}
   ]
 
-  var toggles = d3plus.form()
-    .data("[name=toggles]")
-    .draw()
-
-  var visualization = d3plus.viz()
+ var visualization = d3plus.viz()
     .container("#viz")
     .type("network")
     .data(component_systems)  // sample dataset to attach to nodes
- //   .text("name")
     .edges({
       "label": "strength",
       "value": new_user,
