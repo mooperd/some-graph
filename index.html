@@ -33,15 +33,7 @@
     {"source": "Customer", "target": "EBS", "strength": "disco"}
   ]
 
-// This array describes another particular process
-  var screw_user = [
-    {"source": "IVY", "target": "Webshop", "strength": "funk"},
-    {"source": "Webshop", "target": "Customer", "strength": "soul"},
-    {"source": "Customer", "target": "EBS", "strength": "disco"}
-  ]
-
-// This is where the magic happens
- var visualization = d3plus.viz()
+  var visualization = d3plus.viz()
     .id("name") // I dont understand why this has to be set.
     .container("#viz")
     .type("network") // Sets the type of visualisation
@@ -55,7 +47,7 @@
       {
         "method" : "edges",
         "type" : "auto",
-        "value": [{"Kill User": "new_user"}, {"New User": "kill_user"}, {"Screw User": "screw_user"} ]
+        "value": [{"Kill User": new_user}, {"New User": kill_user}]
       }
     ])
     .draw()
