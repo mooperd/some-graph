@@ -8,6 +8,7 @@
  
 <script>
 
+// this array sets the main systems that will always be with us
   var component_systems = [
     {"name": "Customer", "size": 10},
     {"name": "SDBS", "size": 10},
@@ -17,6 +18,7 @@
     {"name": "Webshop", "size": 10},
   ]
 
+// This array describes a particular process
   var new_user = [
     {"source": "Customer", "target": "Website", "strength": "POST \n make.user(email, password )"},
     {"source": "Website", "target": "SDBS", "strength": "sod.off()"},
@@ -24,27 +26,36 @@
     {"source": "EBS", "target": "Customer", "strength": "wibble()"}
   ]
 
+// This array describes another particular process
   var kill_user = [
     {"source": "IVY", "target": "Webshop", "strength": "funk"},
     {"source": "Webshop", "target": "Customer", "strength": "soul"},
     {"source": "Customer", "target": "EBS", "strength": "disco"}
   ]
 
+// This array describes another particular process
+  var screw_user = [
+    {"source": "IVY", "target": "Webshop", "strength": "funk"},
+    {"source": "Webshop", "target": "Customer", "strength": "soul"},
+    {"source": "Customer", "target": "EBS", "strength": "disco"}
+  ]
+
+// This is where the magic happens
  var visualization = d3plus.viz()
-    .id("name")
+    .id("name") // I dont understand why this has to be set.
     .container("#viz")
-    .type("network")
-    .data(component_systems)  // sample dataset to attach to nodes
-    .edges({
-      "label": "strength",
+    .type("network") // Sets the type of visualisation
+    .data(component_systems)  // define our nodes
+    .edges({ // define how the nodes link together with edges 
+      "label": "strength", 
       "value": new_user,
       "arrows": true
     })
-    .ui([
+    .ui([ // this ui function is meant to change the process defined in .edges but it is currently not working properly. 
       {
         "method" : "edges",
-        "type": "button",
-        "value": [{"Kill User": new_user}, {"New User": kill_user}]
+        "type" : "auto",
+        "value": [{"Kill User": "new_user"}, {"New User": "kill_user"}, {"Screw User": "screw_user"} ]
       }
     ])
     .draw()
