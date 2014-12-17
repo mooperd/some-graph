@@ -10,27 +10,27 @@
 
 // this array sets the main systems that will always be with us
   var component_systems = [
-    {"name": "Customer", "size": 10},
-    {"name": "SDBS", "size": 10},
-    {"name": "EBS", "size": 10},
-    {"name": "IVY", "size": 10},
-    {"name": "Website", "size": 10},
-    {"name": "Webshop", "size": 10},
+    {"name": "Angel", "size": 10},
+    {"name": "Banana", "size": 10},
+    {"name": "Banoffee", "size": 10},
+    {"name": "Baumkuchen", "size": 10},
+    {"name": "Brownie", "size": 10},
   ]
 
 // This array describes a particular process
   var new_user = [
-    {"source": "Customer", "target": "Website", "strength": "POST \n make.user(email, password )"},
-    {"source": "Website", "target": "SDBS", "strength": "sod.off()"},
-    {"source": "SDBS", "target": "EBS", "strength": "mr.bungle()"},
-    {"source": "EBS", "target": "Customer", "strength": "wibble()"}
+    {"source": "Angel", "target": "Banana", "strength": "impatient.llama()"},
+    {"source": "Banana", "target": "Banoffee", "strength": "difficult.duck()"},
+    {"source": "Banoffee", "target": "Baumkuchen", "strength": "mr.bungle()"},
+    {"source": "Baumkuchen", "target": "Brownie", "strength": "wibble()"}
   ]
 
 // This array describes another particular process
   var kill_user = [
-    {"source": "IVY", "target": "Webshop", "strength": "funk"},
-    {"source": "Webshop", "target": "Customer", "strength": "soul"},
-    {"source": "Customer", "target": "EBS", "strength": "disco"}
+    {"source": "Banana", "target": "Angel", "strength": "funk"},
+    {"source": "Angel", "target": "Baumkuchen", "strength": "soul"},
+    {"source": "Angel", "target": "Banoffee", "strength": "disco"},
+    {"source": "Angel", "target": "Brownie", "strength": "disco"}
   ]
 
   var visualization = d3plus.viz()
